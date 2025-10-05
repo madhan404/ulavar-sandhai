@@ -1,4 +1,4 @@
-# 🌾  உழவர் சந்தை - Farmer's Marketplace  🍅
+# 🌾 👨‍🌾 உழவர் சந்தை - Farmer's Marketplace  🍅
 
 
 A full-stack MERN-like (React with Vite, Node.js, MySQL) e-commerce app connecting farmers and customers, featuring role-based authentication, product listings, real-time order and logistics management. 🚜 🛒 🍅
@@ -47,39 +47,40 @@ A full-stack MERN-like (React with Vite, Node.js, MySQL) e-commerce app connecti
 
 ulavar-sandhai/
 ├── server/
-│ ├── src/
-│ │ ├── config/
-│ │ │ └── database.js
-│ │ ├── controllers/
-│ │ │ ├── authController.js
-│ │ │ ├── adminController.js
-│ │ │ ├── farmerController.js
-│ │ │ ├── customerController.js
-│ │ │ └── logisticsController.js
-│ │ ├── models/
-│ │ │ ├── User.js
-│ │ │ ├── Product.js
-│ │ │ ├── Order.js
-│ │ │ └── Logistics.js
-│ │ ├── routes/
-│ │ │ ├── auth.js
-│ │ │ ├── admin.js
-│ │ │ ├── farmer.js
-│ │ │ ├── customer.js
-│ │ │ └── logistics.js
-│ │ └── middleware/
-│ │ └── auth.js
-│ ├── server.js
-│ ├── .env
-│ └── package.json
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── database.js
+│   │   ├── controllers/
+│   │   │   ├── authController.js
+│   │   │   ├── adminController.js
+│   │   │   ├── farmerController.js
+│   │   │   ├── customerController.js
+│   │   │   └── logisticsController.js
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   ├── Product.js
+│   │   │   ├── Order.js
+│   │   │   └── Logistics.js
+│   │   ├── routes/
+│   │   │   ├── auth.js
+│   │   │   ├── admin.js
+│   │   │   ├── farmer.js
+│   │   │   ├── customer.js
+│   │   │   └── logistics.js
+│   │   └── middleware/
+│   │       └── auth.js
+│   ├── server.js
+│   ├── .env
+│   └── package.json
 └── client/
-├── src/
-│ ├── api/
-│ ├── components/
-│ ├── context/
-│ ├── pages/
-│ └── App.jsx
-└── package.json
+    ├── src/
+    │   ├── api/
+    │   ├── components/
+    │   ├── context/
+    │   ├── pages/
+    │   └── App.jsx
+    └── package.json
+
 
 ---
 
@@ -233,4 +234,4 @@ Contributions are welcome! 🎉 Please open an issue for suggestions or bugs bef
 
 ##  🙋‍♂️ Contact
 Made with ❤️ by [Madhanraj S](https://github.com/madhan404) உழவர் சந்தை Team
-🌐 Website: Coming soon
+🌐 Website: [ உழவர் சந்தை ](https://ulavarsandhai.netlify.app/)
