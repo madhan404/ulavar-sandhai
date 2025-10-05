@@ -40,43 +40,48 @@ A full-stack MERN-like (React with Vite, Node.js, MySQL) e-commerce app connecti
 
 ⚡ Real-time updates for customers and admins
 
+---
+
+
 ## 📂 Project Structure
 
 ulavar-sandhai/
 ├── server/
-│   ├── src/
-│   │   ├── config/
-│   │   │   └── database.js
-│   │   ├── controllers/
-│   │   │   ├── authController.js
-│   │   │   ├── adminController.js
-│   │   │   ├── farmerController.js
-│   │   │   ├── customerController.js
-│   │   │   └── logisticsController.js
-│   │   ├── models/
-│   │   │   ├── User.js
-│   │   │   ├── Product.js
-│   │   │   ├── Order.js
-│   │   │   └── Logistics.js
-│   │   ├── routes/
-│   │   │   ├── auth.js
-│   │   │   ├── admin.js
-│   │   │   ├── farmer.js
-│   │   │   ├── customer.js
-│   │   │   └── logistics.js
-│   │   └── middleware/
-│   │       └── auth.js
-│   ├── server.js
-│   ├── .env
-│   └── package.json
+│ ├── src/
+│ │ ├── config/
+│ │ │ └── database.js
+│ │ ├── controllers/
+│ │ │ ├── authController.js
+│ │ │ ├── adminController.js
+│ │ │ ├── farmerController.js
+│ │ │ ├── customerController.js
+│ │ │ └── logisticsController.js
+│ │ ├── models/
+│ │ │ ├── User.js
+│ │ │ ├── Product.js
+│ │ │ ├── Order.js
+│ │ │ └── Logistics.js
+│ │ ├── routes/
+│ │ │ ├── auth.js
+│ │ │ ├── admin.js
+│ │ │ ├── farmer.js
+│ │ │ ├── customer.js
+│ │ │ └── logistics.js
+│ │ └── middleware/
+│ │ └── auth.js
+│ ├── server.js
+│ ├── .env
+│ └── package.json
 └── client/
-    ├── src/
-    │   ├── api/
-    │   ├── components/
-    │   ├── context/
-    │   ├── pages/
-    │   └── App.jsx
-    └── package.json
+├── src/
+│ ├── api/
+│ ├── components/
+│ ├── context/
+│ ├── pages/
+│ └── App.jsx
+└── package.json
+
+---
 
 
 ## 🚀 Getting Started
@@ -116,16 +121,21 @@ npm install
 npm run dev
 Frontend runs on 👉 http://localhost:5173
 
-##  🧑‍🤝‍🧑 User Roles
+---
 
-Role	Capabilities
-Admin	Manage users, products, orders, logistics
-Farmer	Post/manage products, view orders
-Customer	Browse products, place orders, track orders
-Logistics	Update order status, manage deliveries
-Default admin user creation (via MySQL or backend query):
+## 👥 User Roles
 
-##  sql
+| Role     | Capabilities                                |
+|----------|--------------------------------------------|
+| Admin    | Manage users, products, orders, logistics |
+| Farmer   | Post/manage products, view orders          |
+| Customer | Browse products, place orders, track orders|
+| Logistics| Update order status, manage deliveries     |
+
+---
+
+> **Default admin user creation:**
+
 UPDATE users SET role = 'admin' WHERE email = 'admin@ulavarsandhai.com';
 
 ##  🔗 API Endpoints
