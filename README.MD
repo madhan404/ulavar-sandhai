@@ -5,9 +5,9 @@ A full-stack MERN-like (React with Vite, Node.js, MySQL) e-commerce app connecti
 
 <!-- ![Farmer Logo](client/public/farmer.png) -->
 
-
-<img src="client/public/farmer.png" alt="Farmer Logo" width="120">
-
+<p align="center">
+  <img src="client/public/farmer.png" alt="Farmer Logo" width="200" />
+</p>
 
 
 ## 🚦 Tech Stack
