@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { User, ShoppingCart, Truck, Building2, Eye, EyeOff } from 'lucide-react';
 import axios from 'axios';
+const apiUrl = import.meta.env.VITE_URL_API || 'http://localhost:3000';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -84,7 +85,7 @@ const Register = () => {
         ...(formData.role === 'farmer' && farmerData)
       };
 
-      const response = await axios.post('/api/auth/register', registrationData);
+      const response = await axios.post(`${apiUrl}/api/auth/register`, registrationData);
       
       if (response.data.success) {
         if (formData.role === 'farmer') {

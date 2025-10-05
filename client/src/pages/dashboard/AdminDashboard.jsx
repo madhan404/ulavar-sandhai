@@ -4,6 +4,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useAuth } from '../../contexts/AuthContext';
 import Settings from '../../components/Settings';
+const apiUrl = import.meta.env.VITE_URL_API || 'http://localhost:3000';
 
 const AdminDashboard = () => {
   const { user, isAuthenticated } = useAuth();
@@ -71,7 +72,7 @@ const AdminDashboard = () => {
 
     setAddingCategory(true);
     try {
-      const { data } = await axios.post('/api/admin/categories', newCategory);
+      const { data } = await axios.post(`${apiUrl}/api/admin/categories`, newCategory);
       // Create the category object with the correct structure
       const newCategoryObj = {
         id: data.category.id,
@@ -105,7 +106,7 @@ const AdminDashboard = () => {
       const updatedImages = [...(currentProduct.images || []), imageUrl];
       
       // Update the product in the database
-      await axios.patch(`/api/admin/products/${productId}/images`, {
+      await axios.patch(`${apiUrl}/api/admin/products/${productId}/images`, {
         images: updatedImages
       });
       
@@ -133,7 +134,7 @@ const AdminDashboard = () => {
       const updatedImages = currentProduct.images.filter((_, index) => index !== imageIndex);
       
       // Update the product in the database
-      await axios.patch(`/api/admin/products/${productId}/images`, {
+      await axios.patch(`${apiUrl}/api/admin/products/${productId}/images`, {
         images: updatedImages
       });
       
@@ -166,7 +167,7 @@ const AdminDashboard = () => {
     }
 
     try {
-      await axios.delete(`/api/admin/products/${productId}`);
+      await axios.delete(`${apiUrl}/api/admin/products/${productId}`);
       setProducts(products.filter(p => p.id !== productId));
       toast.success('Product deleted successfully!');
     } catch (error) {
@@ -192,7 +193,7 @@ const AdminDashboard = () => {
     }
 
     try {
-      await axios.delete(`/api/admin/categories/${categoryId}`);
+      await axios.delete(`${apiUrl}/api/admin/categories/${categoryId}`);
       setCategories(categories.filter(cat => cat.id !== categoryId));
       toast.success('Category deleted successfully!');
     } catch (error) {
@@ -230,15 +231,14 @@ const AdminDashboard = () => {
 
       // Use Promise.allSettled to handle failures gracefully and continue loading other data
       const results = await Promise.allSettled([
-        axios.get('/api/admin/farmers/pending'),
-        axios.get('/api/admin/users/farmer'),
-        axios.get('/api/admin/users/buyer'),
-        axios.get('/api/admin/users/logistics'),
-        axios.get('/api/admin/categories'),
-        axios.get('/api/admin/products'),
-        axios.get('/api/admin/stats')
-      ]);
-
+        axios.get(`${apiUrl}/api/admin/farmers/pending`),
+        axios.get(`${apiUrl}/api/admin/users/farmer`),
+        axios.get(`${apiUrl}/api/admin/users/buyer`),
+        axios.get(`${apiUrl}/api/admin/users/logistics`),
+        axios.get(`${apiUrl}/api/admin/categories`),
+        axios.get(`${apiUrl}/api/admin/products`),
+        axios.get(`${apiUrl}/api/admin/stats`)
+      ]); 
       // Process results and handle rate limiting
       const [
         pendingResult, farmersResult, buyersResult, 
@@ -322,7 +322,7 @@ const AdminDashboard = () => {
   // Action handlers
   const approveFarmer = async (userId) => {
     try {
-      await axios.patch(`/api/admin/farmers/${userId}/approve`);
+      await axios.patch(`${apiUrl}/api/admin/farmers/${userId}/approve`);
       alert('Farmer approved successfully!');
       await fetchData(true); // Refresh data
     } catch (error) {
@@ -338,7 +338,7 @@ const AdminDashboard = () => {
     }
     
     try {
-      await axios.patch(`/api/admin/farmers/${userId}/reject`, { reason });
+      await axios.patch(`${apiUrl}/api/admin/farmers/${userId}/reject`, { reason });
       alert('Farmer rejected successfully!');
       await fetchData(true); // Refresh data
     } catch (error) {
@@ -372,7 +372,7 @@ const AdminDashboard = () => {
     if (!selectedFarmer) return;
     
     try {
-      await axios.patch(`/api/admin/farmers/${selectedFarmer.user_id}/kyc`, {
+      await axios.patch(`${apiUrl}/api/admin/farmers/${selectedFarmer.user_id}/kyc`, {
         status: kycForm.status,
         reason: kycForm.status === 'rejected' ? kycForm.reason : null
       });
@@ -391,7 +391,7 @@ const AdminDashboard = () => {
     if (!selectedFarmer) return;
     
     try {
-      await axios.patch(`/api/admin/farmers/${selectedFarmer.user_id}/profile`, farmerData);
+      await axios.patch(`${apiUrl}/api/admin/farmers/${selectedFarmer.user_id}/profile`, farmerData);
       
       toast.success('Farmer profile updated successfully!');
       setShowFarmerEditModal(false);
@@ -407,7 +407,7 @@ const AdminDashboard = () => {
     if (!selectedLogistics) return;
     
     try {
-      await axios.patch(`/api/admin/logistics/${selectedLogistics.user_id}/profile`, logisticsData);
+      await axios.patch(`${apiUrl}/api/admin/logistics/${selectedLogistics.user_id}/profile`, logisticsData);
       
       toast.success('Logistics profile updated successfully!');
       setShowLogisticsEditModal(false);
@@ -429,7 +429,7 @@ const AdminDashboard = () => {
     if (!selectedProduct) return;
     
     try {
-      await axios.patch(`/api/admin/products/${selectedProduct.id}`, productData);
+      await axios.patch(`${apiUrl}/api/admin/products/${selectedProduct.id}`, productData);
       
       toast.success('Product updated successfully!');
       setShowProductEditModal(false);
@@ -1725,7 +1725,7 @@ const AdminDashboard = () => {
               <button
                 onClick={async () => {
                   try {
-                    await axios.patch(`/api/admin/products/${selectedProductForImages.id}/images`, {
+                    await axios.patch(`${apiUrl}/api/admin/products/${selectedProductForImages.id}/images`, {
                       images: selectedProductForImages.images
                     });
                     

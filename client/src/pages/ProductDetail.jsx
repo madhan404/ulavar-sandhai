@@ -4,7 +4,7 @@ import axios from 'axios';
 import { ArrowLeft, ShoppingCart, Package, MapPin, User, Calendar, Heart, Plus, X } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { toast } from 'react-toastify';
-
+const apiUrl = import.meta.env.VITE_URL_API || 'http://localhost:3000';
 export default function ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ export default function ProductDetail() {
       try {
         setLoading(true);
         setError(null);
-        const { data } = await axios.get(`/api/products/${id}`);
+        const { data } = await axios.get(`${apiUrl}/api/products/${id}`);
         setProduct(data);
         
         // Load wishlist from localStorage

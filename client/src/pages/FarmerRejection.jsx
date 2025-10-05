@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { XCircle, AlertTriangle, RefreshCw, Trash2 } from 'lucide-react';
 import axios from 'axios';
-
+const apiUrl = import.meta.env.VITE_URL_API || 'http://localhost:3000';
 export default function FarmerRejection() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -34,7 +34,7 @@ export default function FarmerRejection() {
 
     try {
       // Call admin API to delete the rejected farmer
-      await axios.delete(`/api/admin/farmers/${farmerId}`, {
+      await axios.delete(`${apiUrl}/api/admin/farmers/${farmerId}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

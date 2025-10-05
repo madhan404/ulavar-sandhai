@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { Package, ShoppingCart, Search, Filter, Star, Heart, MapPin, User, Grid, List, Plus, Minus, X, Eye } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-
+const apiUrl = import.meta.env.VITE_URL_API || 'http://localhost:3000';
 export default function Products() {
   const { user, isAuthenticated } = useAuth();
   const navigate = useNavigate();
@@ -32,8 +32,8 @@ export default function Products() {
         setLoading(true);
         setError(null);
         const [productsRes, categoriesRes] = await Promise.all([
-          axios.get('/api/products'),
-          axios.get('/api/categories')
+          axios.get(`${apiUrl}/api/products`),
+          axios.get(`${apiUrl}/api/categories`)
         ]);
         setProducts(productsRes.data);
         setFilteredProducts(productsRes.data);

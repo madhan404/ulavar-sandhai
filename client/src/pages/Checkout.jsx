@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+const apiUrl = import.meta.env.VITE_URL_API || 'http://localhost:3000';
 
 export default function Checkout() {
   const { user, isAuthenticated } = useAuth();
@@ -60,7 +61,7 @@ export default function Checkout() {
 
   const loadProfile = async () => {
     try {
-      const response = await axios.get('/api/buyers/profile');
+      const response = await axios.get(`${apiUrl}/api/buyers/profile`);
       setProfile(response.data);
       
       // Set default address if available
@@ -81,7 +82,7 @@ export default function Checkout() {
 
   const loadAddresses = async () => {
     try {
-      const response = await axios.get(`/api/buyers/addresses`);
+      const response = await axios.get(`${apiUrl}/api/buyers/addresses`);
       setAddresses(response.data);
     } catch (error) {
       console.error('Error loading addresses:', error);
@@ -160,7 +161,7 @@ export default function Checkout() {
         payment_method: paymentMethod
       };
 
-      const response = await axios.post('/api/orders', orderData);
+      const response = await axios.post(`${apiUrl}/api/orders`, orderData);
       
       // Set order details for confirmation
       setOrderDetails({
