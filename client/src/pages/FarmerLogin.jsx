@@ -123,6 +123,15 @@ export default function FarmerLogin() {
             </p>
           </div>
 
+          <div className="mt-4 text-center">
+            <p className="text-gray-500 text-xs">
+              Default credentials:
+              <br />
+              Farmer :  farmer.lakshmi@email.com / password
+              <br />
+            </p>
+          </div>
+
           <div className="mt-6 pt-6 border-t border-gray-200">
             <p className="text-center text-gray-500 text-sm">
               For buyer access,{' '}
