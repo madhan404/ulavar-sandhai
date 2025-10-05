@@ -72,9 +72,9 @@ export default function BuyerDashboard() {
     try {
       setLoading(true);
       const [ordersRes, profileRes, addressesRes] = await Promise.all([
-        axios.get('/api/orders/buyer/my-orders'),
-        axios.get('/api/buyers/profile'),
-        axios.get('/api/buyers/addresses')
+        axios.get(`/api/orders/buyer/my-orders`),
+        axios.get(`/api/buyers/profile`),
+        axios.get(`/api/buyers/addresses`)
       ]);
       
       // Check for status changes in orders
@@ -134,12 +134,21 @@ export default function BuyerDashboard() {
     }
   };
 
+  
+// added `` added ``added ``added ``added ``
+// added `` added ``added ``added ``added ``
+// added `` added ``added ``added ``added ``
+// added `` added ``added ``added ``added ``
+// added `` added ``added ``added ``added ``
+// added `` added ``added ``added ``added ``
+
+
   const addAddress = async () => {
     try {
       await axios.post('/api/buyers/addresses', addressForm);
       
       // Refresh addresses after adding
-      const addressesRes = await axios.get('/api/buyers/addresses');
+      const addressesRes = await axios.get(`/api/buyers/addresses`);
       setAddresses(addressesRes.data);
       
       setShowAddressModal(false);

@@ -81,7 +81,7 @@ export default function Checkout() {
 
   const loadAddresses = async () => {
     try {
-      const response = await axios.get('/api/buyers/addresses');
+      const response = await axios.get(`/api/buyers/addresses`);
       setAddresses(response.data);
     } catch (error) {
       console.error('Error loading addresses:', error);
