@@ -3,6 +3,13 @@
 
 A full-stack MERN-like (React with Vite, Node.js, MySQL) e-commerce app connecting farmers and customers, featuring role-based authentication, product listings, real-time order and logistics management. 🚜 🛒 🍅
 
+![Farmer Logo](client/public/farmer.png)
+
+
+<img src="client/public/farmer.png" alt="Farmer Logo" width="120">
+
+
+
 ## 🚦 Tech Stack
 <p align="left"> <img src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white" alt="Node.js"/> <img src="https://img.shields.io/badge/Express-000000?logo=express&logoColor=white" alt="Express"/> <img src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white" alt="MySQL"/> <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" alt="React"/> <img src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white" alt="Vite"/> <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white" alt="TailwindCSS"/> <img src="https://img.shields.io/badge/JWT-black?logo=jsonwebtokens&logoColor=white" alt="JWT"/> </p>
 
