@@ -60,7 +60,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Kisan Market?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose உழவர் சந்தை?</h2>
             <p className="text-xl text-gray-600">Direct farm-to-table experience with quality assurance</p>
           </div>
           
@@ -96,7 +96,7 @@ export default function Home() {
       <section className="py-20 bg-green-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
-          <p className="text-xl text-green-100 mb-8">Join thousands of customers and farmers already using Kisan Market</p>
+          <p className="text-xl text-green-100 mb-8">Join thousands of customers and farmers already using உழவர் சந்தை</p>
           
           {!isAuthenticated ? (
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

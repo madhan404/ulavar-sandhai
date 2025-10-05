@@ -1,4 +1,4 @@
-# 🌾  Ulavar Sandhai - Farmer's Marketplace  🍅
+# 🌾  உழவர் சந்தை - Farmer's Marketplace  🍅
 
 
 A full-stack MERN-like (React with Vite, Node.js, MySQL) e-commerce app connecting farmers and customers, featuring role-based authentication, product listings, real-time order and logistics management. 🚜 🛒 🍅
@@ -222,5 +222,5 @@ Contributions are welcome! 🎉 Please open an issue for suggestions or bugs bef
 
 
 ##  🙋‍♂️ Contact
-Made with ❤️ by [Madhanraj S](https://github.com/madhan404) Ulavar Sandhai Team
+Made with ❤️ by [Madhanraj S](https://github.com/madhan404) உழவர் சந்தை Team
 🌐 Website: Coming soon

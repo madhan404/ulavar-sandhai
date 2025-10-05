@@ -16,10 +16,12 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">K</span>
+            <div className="w-14 h-14 rounded-lg flex items-center justify-center">
+               {/* bg-green-600 */}
+              {/* <span className="text-white font-bold text-lg">U</span> */}
+              <img src="/farmer.png" alt="Logo" className="w-full h-full object-contain rounded-lg" />
             </div>
-            <span className="text-xl font-bold text-gray-900">Kisan Market</span>
+            <span className="text-xl font-bold text-gray-900">உழவர் சந்தை </span>
           </Link>
 
           {/* Navigation Links */}

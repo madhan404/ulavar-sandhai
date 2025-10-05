@@ -15,7 +15,7 @@ const Footer = () => {
               <div className="bg-primary-600 p-2 rounded-lg">
                 <Sprout className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold">Kisan Market</span>
+              <span className="text-xl font-bold">உழவர் சந்தை</span>
             </Link>
             <p className="text-gray-300 mb-4 max-w-md">
               Empowering Indian farmers by connecting them directly with buyers across the nation. 
@@ -73,7 +73,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-6 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2025 Kisan Market. All rights reserved.
+              © 2025 உழவர் சந்தை. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link to="#" className="text-gray-400 hover:text-white text-sm transition-colors">
