@@ -14,6 +14,7 @@ import {
   Edit
 } from 'lucide-react';
 import { toast } from 'react-toastify';
+const apiUrl = import.meta.env.VITE_URL_API;
 
 export default function Settings({ userRole }) {
   const { user, isAuthenticated } = useAuth();
@@ -70,7 +71,7 @@ export default function Settings({ userRole }) {
       setLoading(true);
       
       // Load basic user info
-      const userResponse = await axios.get(`/api/users/${user.id}`);
+      const userResponse = await axios.get(`${apiUrl}/api/users/${user.id}`);
       const userData = userResponse.data;
       
       setProfileForm({
@@ -85,7 +86,7 @@ export default function Settings({ userRole }) {
 
       // Load role-specific data
       if (userRole === 'farmer') {
-        const farmerResponse = await axios.get('/api/farmers/profile');
+        const farmerResponse = await axios.get(`${apiUrl}/api/farmers/profile`);
         const farmerData = farmerResponse.data;
         
         setFarmerForm({
@@ -109,7 +110,7 @@ export default function Settings({ userRole }) {
       }
 
       if (userRole === 'logistics') {
-        const logisticsResponse = await axios.get('/api/logistics/profile');
+        const logisticsResponse = await axios.get(`${apiUrl}/api/logistics/profile`);
         const logisticsData = logisticsResponse.data;
         
         setLogisticsForm({
@@ -122,7 +123,7 @@ export default function Settings({ userRole }) {
       }
 
       if (userRole === 'admin') {
-        const adminResponse = await axios.get('/api/admin/profile');
+        const adminResponse = await axios.get(`${apiUrl}/api/admin/profile`);
         const adminData = adminResponse.data;
         
         setAdminForm({
@@ -146,7 +147,7 @@ export default function Settings({ userRole }) {
       setSaving(true);
       
       // Update basic user info
-      await axios.patch(`/api/users/${user.id}`, {
+      await axios.patch(`${apiUrl}/api/users/${user.id}`, {
         name: profileForm.name,
         email: profileForm.email,
         phone: profileForm.phone
@@ -154,7 +155,7 @@ export default function Settings({ userRole }) {
 
       // Update role-specific info
       if (userRole === 'farmer') {
-        await axios.patch('/api/farmers/profile', {
+        await axios.patch(`${apiUrl}/api/farmers/profile`, {
           ...farmerForm,
           pickup_address: profileForm.address,
           city: profileForm.city,
@@ -164,11 +165,11 @@ export default function Settings({ userRole }) {
       }
 
       if (userRole === 'logistics') {
-        await axios.patch('/api/logistics/profile', logisticsForm);
+        await axios.patch(`${apiUrl}/api/logistics/profile`, logisticsForm);
       }
 
       if (userRole === 'admin') {
-        await axios.patch('/api/admin/profile', adminForm);
+        await axios.patch(`${apiUrl}/api/admin/profile`, adminForm);
       }
 
       toast.success('Profile updated successfully!');

@@ -5,6 +5,8 @@ import { useAuth } from '../../contexts/AuthContext';
 import { toast } from 'react-toastify';
 import Settings from '../../components/Settings';
 
+const apiUrl = import.meta.env.VITE_URL_API || 'http://localhost:3000';
+
 export default function FarmerDashboard() {
   const { user, isAuthenticated } = useAuth();
   const [products, setProducts] = useState([]);
@@ -41,7 +43,7 @@ export default function FarmerDashboard() {
         // Fetch categories separately since it's a public endpoint
         try {
           console.log('FarmerDashboard: About to fetch categories...');
-          const { data: cats } = await axios.get('/api/categories');
+          const { data: cats } = await axios.get(`${apiUrl}/api/categories`);
           console.log('FarmerDashboard: Categories received:', cats.length);
           setCategories(cats);
         } catch (catError) {
@@ -53,9 +55,9 @@ export default function FarmerDashboard() {
         // Fetch farmer-specific data
         try {
           const [{ data: myProducts }, { data: myOrders }, { data: profile }] = await Promise.all([
-            axios.get('/api/products/farmer/my-products'),
-            axios.get('/api/orders/farmer/my-orders'),
-            axios.get('/api/farmers/profile'),
+            axios.get(`${apiUrl}/api/products/farmer/my-products`),
+            axios.get(`${apiUrl}/api/orders/farmer/my-orders`),
+            axios.get(`${apiUrl}/api/farmers/profile`),
           ]);
           setProducts(myProducts);
           setOrders(myOrders);
@@ -105,10 +107,10 @@ export default function FarmerDashboard() {
         unit: form.unit,
         stock_quantity: Number(form.stock_quantity),
       };
-      await axios.post('/api/products', payload);
+      await axios.post(`${apiUrl}/api/products`, payload);
       
       // Refresh products
-      const { data } = await axios.get('/api/products/farmer/my-products');
+      const { data } = await axios.get(`${apiUrl}/api/products/farmer/my-products`);
       setProducts(data);
       
       // Reset form

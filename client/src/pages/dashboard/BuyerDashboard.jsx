@@ -26,6 +26,8 @@ import {
 } from 'lucide-react';
 import { toast } from 'react-toastify';
 
+const apiUrl = import.meta.env.VITE_URL_API || 'http://localhost:3000';
+
 export default function BuyerDashboard() {
   const { user, isAuthenticated } = useAuth();
   const [activeTab, setActiveTab] = useState('overview');
@@ -72,9 +74,9 @@ export default function BuyerDashboard() {
     try {
       setLoading(true);
       const [ordersRes, profileRes, addressesRes] = await Promise.all([
-        axios.get(`/api/orders/buyer/my-orders`),
-        axios.get(`/api/buyers/profile`),
-        axios.get(`/api/buyers/addresses`)
+        axios.get(`${apiUrl}/api/orders/buyer/my-orders`),
+        axios.get(`${apiUrl}/api/buyers/profile`),
+        axios.get(`${apiUrl}/api/buyers/addresses`)
       ]);
       
       // Check for status changes in orders
@@ -115,7 +117,7 @@ export default function BuyerDashboard() {
         pincode: profileForm.pincode
       };
       
-      await axios.patch('/api/buyers/profile', updateData);
+      await axios.patch(`${apiUrl}/api/buyers/profile`, updateData);
       
       // Update local profile state
       setProfile(prev => ({ 
@@ -134,21 +136,13 @@ export default function BuyerDashboard() {
     }
   };
 
-  
-// added `` added ``added ``added ``added ``
-// added `` added ``added ``added ``added ``
-// added `` added ``added ``added ``added ``
-// added `` added ``added ``added ``added ``
-// added `` added ``added ``added ``added ``
-// added `` added ``added ``added ``added ``
-
 
   const addAddress = async () => {
     try {
-      await axios.post('/api/buyers/addresses', addressForm);
+      await axios.post(`${apiUrl}/api/buyers/addresses`, addressForm);
       
       // Refresh addresses after adding
-      const addressesRes = await axios.get(`/api/buyers/addresses`);
+      const addressesRes = await axios.get(`${apiUrl}/api/buyers/addresses`);
       setAddresses(addressesRes.data);
       
       setShowAddressModal(false);
@@ -162,7 +156,7 @@ export default function BuyerDashboard() {
 
   const trackOrder = async (orderId) => {
     try {
-      const response = await axios.get(`/api/orders/${orderId}/status`);
+      const response = await axios.get(`${apiUrl}/api/orders/${orderId}/status`);
       setOrderTracking(response.data);
       setSelectedOrder(orders.find(o => o.id === orderId));
       setShowTrackingModal(true);
@@ -1055,5 +1049,3 @@ export default function BuyerDashboard() {
     </div>
   );
 }
-
-

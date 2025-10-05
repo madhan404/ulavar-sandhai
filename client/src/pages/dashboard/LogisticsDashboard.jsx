@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Package, Truck, Clock, CheckCircle, MapPin, Settings as SettingsIcon } from 'lucide-react';
 import Settings from '../../components/Settings';
-
+const apiUrl = import.meta.env.VITE_URL_API || 'http://localhost:3000';
 export default function LogisticsDashboard() {
   const [orders, setOrders] = useState([]);
   const [selectedOrder, setSelectedOrder] = useState(null);
@@ -48,7 +48,7 @@ export default function LogisticsDashboard() {
   useEffect(() => {
     const run = async () => {
       try {
-        const { data } = await axios.get('/api/logistics/orders');
+        const { data } = await axios.get(`${apiUrl}/api/logistics/orders`);
         console.log('Logistics orders:', data);
         setOrders(data);
       } catch (e) {
@@ -62,7 +62,7 @@ export default function LogisticsDashboard() {
 
   const update = async (id, status) => {
     try {
-      await axios.patch(`/api/logistics/orders/${id}/tracking`, { status });
+      await axios.patch(`${apiUrl}/api/logistics/orders/${id}/tracking`, { status });
       setOrders(prev => prev.map(order => 
         order.id === id ? { ...order, status } : order
       ));
@@ -73,7 +73,7 @@ export default function LogisticsDashboard() {
 
   const updateTrackingInfo = async (orderId) => {
     try {
-      await axios.patch(`/api/logistics/orders/${orderId}/tracking`, trackingForm);
+      await axios.patch(`${apiUrl}/api/logistics/orders/${orderId}/tracking`, trackingForm);
       setOrders(prev => prev.map(order => 
         order.id === orderId ? { ...order, ...trackingForm } : order
       ));
