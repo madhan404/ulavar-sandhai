@@ -1,11 +1,13 @@
-🌾  Ulavar Sandhai - Farmer's Marketplace  🍅
+# 🌾  Ulavar Sandhai - Farmer's Marketplace  🍅
+
+
 A full-stack MERN-like (React with Vite, Node.js, MySQL) e-commerce app connecting farmers and customers, featuring role-based authentication, product listings, real-time order and logistics management. 🚜 🛒 🍅
 
-🚦 Tech Stack
+## 🚦 Tech Stack
 <p align="left"> <img src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white" alt="Node.js"/> <img src="https://img.shields.io/badge/Express-000000?logo=express&logoColor=white" alt="Express"/> <img src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white" alt="MySQL"/> <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" alt="React"/> <img src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white" alt="Vite"/> <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white" alt="TailwindCSS"/> <img src="https://img.shields.io/badge/JWT-black?logo=jsonwebtokens&logoColor=white" alt="JWT"/> </p>
 
 
-✨ Features
+## ✨ Features
 👨‍🌾 Farmer Features
 📦 Post products including images, descriptions, prices
 
@@ -38,8 +40,8 @@ A full-stack MERN-like (React with Vite, Node.js, MySQL) e-commerce app connecti
 
 ⚡ Real-time updates for customers and admins
 
-📂 Project Structure
-text
+## 📂 Project Structure
+
 ulavar-sandhai/
 ├── server/
 │   ├── src/
@@ -77,20 +79,20 @@ ulavar-sandhai/
     └── package.json
 
 
-🚀 Getting Started
+## 🚀 Getting Started
 
-1️⃣ Clone the repository
+## 1️⃣ Clone the repository
 bash
 git clone https://github.com/madhan404/ulavar-sandhai.git
 cd ulavar-sandhai
 
-2️⃣ Backend Setup
+## 2️⃣ Backend Setup
 bash
 cd server
 npm install
 
 
-Create .env in server/:
+## Create .env in server/: 🐬 - 🔧
 
 MYSQL_HOST=localhost
 MYSQL_USER=root
@@ -107,14 +109,14 @@ bash
 npm start
 Backend runs on 👉 http://localhost:3000
 
-3️⃣ Frontend Setup
+##  3️⃣ Frontend Setup
 bash
 cd ../client
 npm install
 npm run dev
 Frontend runs on 👉 http://localhost:5173
 
-🧑‍🤝‍🧑 User Roles
+##  🧑‍🤝‍🧑 User Roles
 
 Role	Capabilities
 Admin	Manage users, products, orders, logistics
@@ -123,12 +125,12 @@ Customer	Browse products, place orders, track orders
 Logistics	Update order status, manage deliveries
 Default admin user creation (via MySQL or backend query):
 
-sql
+##  sql
 UPDATE users SET role = 'admin' WHERE email = 'admin@ulavarsandhai.com';
 
-🔗 API Endpoints
+##  🔗 API Endpoints
 
-Authentication
+##  Authentication
 
 POST /api/auth/register - Register user
 
@@ -137,7 +139,7 @@ POST /api/auth/login - Login user
 GET /api/auth/me - Get current user's info
 
 
-Farmer
+##  Farmer
 
 POST /api/farmer/products - Add product
 
@@ -148,7 +150,7 @@ PATCH /api/farmer/products/:id - Update product
 DELETE /api/farmer/products/:id - Delete product
 
 
-Customer
+##  Customer
 
 GET /api/products - List all products
 
@@ -157,7 +159,7 @@ POST /api/orders - Place order
 GET /api/orders - Get customer's orders
 
 
-Admin
+##  Admin
 
 GET /api/admin/users - View users
 
@@ -168,14 +170,14 @@ GET /api/admin/orders - Manage orders
 PATCH /api/admin/orders/:id/assign-logistics - Assign logistics staff
 
 
-Logistics
+##  Logistics
 
 GET /api/logistics/orders - Assigned delivery orders
 
 PATCH /api/logistics/orders/:id/status - Update order status
 
 
-📦 Order Status Flow
+##  📦 Order Status Flow
 
 ⏳ Pending
 ✅ Approved
@@ -184,9 +186,9 @@ PATCH /api/logistics/orders/:id/status - Update order status
 🎉 Delivered
 
 
-🔮 Future Enhancements
+##  🔮 Future Enhancements
 
-💳 Payment gateway integration (Stripe, PayPal)
+💳 Payment gateway integration (Stripe, PayPal, Razorpay)
 
 🔔 Push notifications for order status updates
 
@@ -199,7 +201,7 @@ PATCH /api/logistics/orders/:id/status - Update order status
 📍 Multiple delivery addresses
 
 
-💡 Development Notes
+##  💡 Development Notes
 
 All passwords are securely hashed
 
@@ -211,14 +213,14 @@ MySQL DB schema enforces data integrity
 
 Clean separation of concerns in controllers, models, routes
 
-🤝 Contributing
+##  🤝 Contributing
 Contributions are welcome! 🎉 Please open an issue for suggestions or bugs before making major changes.
 
 
-📄 License
-MIT License. See LICENSE for details.
+##  📄 MIT License
+ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.  
 
 
-🙋‍♂️ Contact
-Made with ❤️ by Ulavar Sandhai Team
+##  🙋‍♂️ Contact
+Made with ❤️ by [Madhanraj S](https://github.com/madhan404) Ulavar Sandhai Team
 🌐 Website: Coming soon
