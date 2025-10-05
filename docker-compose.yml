@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: agri_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: agricultural_marketplace
+      MYSQL_USER: agriuser
+      MYSQL_PASSWORD: agripassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./server/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./server/database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    networks:
+      - agri_network
+    restart: unless-stopped
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: agri_phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: agriuser
+      PMA_PASSWORD: agripassword
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+    networks:
+      - agri_network
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+
+networks:
+  agri_network:
+    driver: bridge

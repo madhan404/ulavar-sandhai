@@ -1,0 +1,19 @@
+{
+    "name": "agricultural-marketplace",
+    "version": "1.0.0",
+    "description": "Agricultural marketplace platform for Indian farmers",
+    "main": "server/index.js",
+    "scripts": {
+      "dev": "concurrently \"npm run server\" \"npm run client\"",
+      "server": "cd server && npm run dev",
+      "client": "cd client && npm run dev",
+      "build": "cd client && npm run build",
+      "setup": "npm install && cd server && npm install && cd ../client && npm install"
+    },
+    "keywords": ["agriculture", "marketplace", "farmers", "india"],
+    "author": "Agricultural Marketplace Team",
+    "license": "MIT",
+    "devDependencies": {
+      "concurrently": "^8.2.0"
+    }
+  }
