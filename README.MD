@@ -3,7 +3,7 @@
 
 A full-stack MERN-like (React with Vite, Node.js, MySQL) e-commerce app connecting farmers and customers, featuring role-based authentication, product listings, real-time order and logistics management. 🚜 🛒 🍅
 
-![Farmer Logo](client/public/farmer.png)
+<!-- ![Farmer Logo](client/public/farmer.png) -->
 
 
 <img src="client/public/farmer.png" alt="Farmer Logo" width="120">
