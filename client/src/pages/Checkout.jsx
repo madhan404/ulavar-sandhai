@@ -88,6 +88,8 @@ export default function Checkout() {
     }
   };
 
+// added 💀
+
   const calculateOrderSummary = (cartItems) => {
     const subtotal = Object.values(cartItems).reduce((total, item) => {
       return total + (item.price * item.quantity);
