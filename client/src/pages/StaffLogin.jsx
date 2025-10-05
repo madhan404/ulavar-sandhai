@@ -108,7 +108,7 @@ export default function StaffLogin() {
               Default credentials:<br/>
               Admin: admin.rajesh@agrimarket.in / password<br/>
 
-              Logistics: logistics@kisan.local / 123
+              Logistics: logistics@kisan.local / password
             </p>
           </div>
         </div>
