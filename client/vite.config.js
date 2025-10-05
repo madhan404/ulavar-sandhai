@@ -10,7 +10,7 @@ console.log('VITE_URL_API:', VITE_URL_API);
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000,
+    port: 5173,
     proxy: {
       '/api': {
         target: VITE_URL_API,

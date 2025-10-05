@@ -1,6 +1,7 @@
 -- Add missing tables for settings functionality
 
 -- Admins table (if it doesn't exist)
+<<<<<<< HEAD
 CREATE TABLE IF NOT EXISTS admins (
   id INT PRIMARY KEY AUTO_INCREMENT,
   user_id INT NOT NULL,
@@ -12,6 +13,19 @@ CREATE TABLE IF NOT EXISTS admins (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+=======
+  CREATE TABLE IF NOT EXISTS admins (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    department VARCHAR(100),
+    designation VARCHAR(100),
+    permissions TEXT,
+    office_location VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+  );
+>>>>>>> 15d4b4f (added logo , changed endpts👩🏻‍🌾)
 
 -- Logistics profiles table (if it doesn't exist)
 CREATE TABLE IF NOT EXISTS logistics_profiles (

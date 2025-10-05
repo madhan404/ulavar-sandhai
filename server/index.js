@@ -78,11 +78,23 @@ app.use('*', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
+<<<<<<< HEAD
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`JWT Secret: ${process.env.JWT_SECRET ? 'Set' : 'NOT SET'}`);
+=======
+const { testConnection } = require('./config/database');
+
+
+app.listen(PORT, async() => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`JWT Secret: ${process.env.JWT_SECRET ? 'Set' : 'NOT SET'}`);
+
+  await testConnection();
+>>>>>>> 15d4b4f (added logo , changed endpts👩🏻‍🌾)
 });
 
 module.exports = app;

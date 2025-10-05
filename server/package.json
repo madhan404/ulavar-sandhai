@@ -4,7 +4,11 @@
     "description": "Backend API for Agricultural Marketplace",
     "main": "index.js",
     "scripts": {
+<<<<<<< HEAD
       "start": "node index.js",
+=======
+      "start": "nodemon index.js",
+>>>>>>> 15d4b4f (added logo , changed endpts👩🏻‍🌾)
       "dev": "nodemon index.js"
     },
     "dependencies": {

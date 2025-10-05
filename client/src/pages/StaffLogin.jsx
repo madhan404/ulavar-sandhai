@@ -106,7 +106,8 @@ export default function StaffLogin() {
           <div className="mt-4 text-center">
             <p className="text-gray-500 text-xs">
               Default credentials:<br/>
-              Admin: admin@kisan.local / password<br/>
+              Admin: admin.rajesh@agrimarket.in / password<br/>
+
               Logistics: logistics@kisan.local / 123
             </p>
           </div>
