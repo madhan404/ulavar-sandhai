@@ -4,13 +4,9 @@ require('dotenv').config();
 const dbConfig = {
   host: process.env.DB_HOST || 'localhost',
   port: process.env.DB_PORT || 3306,
-<<<<<<< HEAD
-  user: process.env.DB_USER || 'agriuser',
-  password: process.env.DB_PASSWORD || 'agripassword',
-=======
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || 'root',
->>>>>>> 15d4b4f (added logo , changed endpts👩🏻‍🌾)
+
   database: process.env.DB_NAME || 'agricultural_marketplace',
   waitForConnections: true,
   connectionLimit: 10,
