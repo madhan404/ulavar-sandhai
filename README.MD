@@ -52,6 +52,8 @@ A full-stack MERN-like (React with Vite, Node.js, MySQL) e-commerce app connecti
 
 ## 📂 Project Structure
 
+```
+
 ulavar-sandhai/
 ├── server/
 │   ├── src/
@@ -87,6 +89,8 @@ ulavar-sandhai/
     │   ├── pages/
     │   └── App.jsx
     └── package.json
+
+```
 
 
 ---
